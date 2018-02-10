@@ -1,0 +1,54 @@
+.Bpr-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  overflow: auto;
+}
+
+.Bpr-list-item-fav {
+  margin-right: 8px;
+  opacity: 0;
+  transition: opacity 0.1s linear;
+  color: #263238;
+
+  .is-fav & {
+    opacity: 1;
+    color: #B71C1C;
+  }
+
+
+  &:after {
+    content: '❤'
+  }
+}
+
+.Bpr-list-item {
+  list-style: none;
+  min-height: 4rem;
+  padding: 0.5rem 0;
+  display: flex;
+  align-items: center;
+  padding-left: 14px;
+  border-bottom: 1px solid #ECEFF1;
+  cursor: pointer;
+  background-color: #CFD8DC;
+  transition: background-color 0.3s ease;
+  justify-content: space-between;
+
+
+  &:hover {
+    background-color: #B0BEC5;
+
+    .Bpr-list-item-fav {
+      opacity: 1;
+    }
+  }
+
+  &.is-active {
+    background-color: #90A4AE;
+  }
+}
+
+.Bpr-list-item-title {
+  margin: 0;
+}

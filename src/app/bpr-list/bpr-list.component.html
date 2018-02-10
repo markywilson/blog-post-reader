@@ -1,0 +1,16 @@
+<ul class="Bpr-list" *ngIf="blogList.length > 0">
+  <li
+    *ngFor="let item of blogList"
+    class="Bpr-list-item"
+    [class.is-active]="item.id === selectedItemId"
+    [class.is-fav]="item.isFav"
+    (click)="onItemClick($event, item)"
+  >
+    <h3 class="Bpr-list-item-title">{{item.title}}</h3>
+    <span class="Bpr-list-item-fav" (click)="onFavClick(item)"></span>
+  </li>
+
+</ul>
+<div class="loader-container" *ngIf="blogList.length === 0">
+  <div class="loader">Loading...</div>
+</div>
